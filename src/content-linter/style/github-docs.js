@@ -104,6 +104,11 @@ const githubDocsConfig = {
     severity: 'warning',
     'partial-markdown-files': true,
   },
+  'rai-reusable-usage': {
+    // GHD035
+    severity: 'error',
+    'partial-markdown-files': true,
+  },
 }
 
 export const githubDocsFrontmatterConfig = {
@@ -167,7 +172,7 @@ export const searchReplaceConfig = {
         message: 'Catch occurrences of docs.gitub.com domain.',
         search: 'docs.github.com',
         searchScope: 'all',
-        severity: 'warning',
+        severity: 'error',
         'partial-markdown-files': true,
       },
       {
@@ -192,7 +197,7 @@ export const searchReplaceConfig = {
         // Do not match developer.github.com/changes or
         // developer.github.com/enterprise/[0-9] or
         // developer.github.com/enterprise/{{something}} (e.g. liquid).
-        // There are occurences that will likely always remain in the content.
+        // There are occurrences that will likely always remain in the content.
         searchPattern: '/developer\\.github\\.com(?!\\/(changes|enterprise\\/([0-9]|{))).*/g',
         searchScope: 'all',
         severity: 'error',

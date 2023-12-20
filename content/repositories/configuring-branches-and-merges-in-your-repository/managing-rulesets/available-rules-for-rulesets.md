@@ -50,6 +50,10 @@ You can require that changes are successfully deployed to specific environments 
 
 When you enable required commit signing on a branch, contributors {% ifversion fpt or ghec %}and bots{% endif %} can only push commits that have been signed and verified to the branch. For more information, see "[AUTOTITLE](/authentication/managing-commit-signature-verification/about-commit-signature-verification)."
 
+Branch protection rules and rulesets behave differently when you create a branch: with rulesets, we check only the commits that aren't accessible from other branches, whereas with branch protection rules, we do not verify signed commits unless you restrict pushes that create matching branches. With both, when you update a branch, we still check all the commits in the specified range, even if a commit is reachable from other branches.
+
+With both methods, we use the `verified_signature?` to confirm if a commit has a valid signature. If not, the update is not accepted.
+
 {% note %}
 
 {% ifversion fpt or ghec %}
@@ -156,7 +160,7 @@ To use this rule, you must first create a workflow file. The workflow file needs
 
 If the workflow file is in an internal or private repository and you want to use the workflow in other repositories in the organization, you will need to allow access to the workflow from outside the repository. For more information, see "[Allowing access to components in an internal repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-an-internal-repository)" or "[Allowing access to components in a private repository](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-an-internal-repository)."
 
-When you add this rule to a ruleset, you will select the source repository and the workflow you want to enforce. The workflow triggers on the `pull_request` or `merge_group` events.
+When you add this rule to a ruleset, you will select the source repository and the workflow you want to enforce. The workflow triggers on the `pull_request`, `pull_request_target`, or `merge_group` events.
 
 A workflow can also block someone from creating a repository, since a workflow can't run against a repository that's being initialized. To get around this, the ruleset either needs to have "Evaluate" as the enforcement status, or someone with bypass permissions needs to create the repository and bypass the branch protection.
 

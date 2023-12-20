@@ -38,7 +38,7 @@ You need to start by forking the demo repository.
 
 1. Navigate to [https://github.com/dependabot/demo](https://github.com/dependabot/demo).
 1. At the top of the page, on the right, click **{% octicon "repo-forked" aria-hidden="true" %} Fork**.
-1. Select an owner (you can select your {% data variables.product.prodname_dotcom %} personal account) and type a  repository name. For more information about forking repositories, see "[AUTOTITLE](/get-started/quickstart/fork-a-repo#forking-a-repository)."
+1. Select an owner (you can select your {% data variables.product.prodname_dotcom %} personal account) and type a  repository name. For more information about forking repositories, see "[AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)."
 1. Click **Create fork**.
 
 ## Enabling {% data variables.product.prodname_dependabot %} for your repository
@@ -70,7 +70,7 @@ If {% data variables.product.prodname_dependabot_alerts %} are enabled for a rep
 
    ![Screenshot showing the list of Dependabot alerts for the demo repository.](/assets/images/help/repository/dependabot-alerts-list-demo-repo.png)
 
-   You can filter {% data variables.product.prodname_dependabot_alerts %} in the list, using a variety of filters or labels. For more information, see "[AUTOTITLE](/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts#prioritizing-dependabot-alerts)."{% ifversion dependabot-alert-rules-auto-dismissal-npm-dev-dependencies %} You can also use {% data variables.product.prodname_dependabot %} alert rules to filter out false positive alerts or alerts you're not interested in. For more information, see "[AUTOTITLE](/code-security/dependabot/dependabot-alert-rules/about-dependabot-alert-rules)."{% endif %}
+   You can filter {% data variables.product.prodname_dependabot_alerts %} in the list, using a variety of filters or labels. For more information, see "[AUTOTITLE](/code-security/dependabot/dependabot-alerts/viewing-and-updating-dependabot-alerts#prioritizing-dependabot-alerts)."{% ifversion dependabot-auto-triage-rules %} You can also use {% data variables.dependabot.auto_triage_rules %}to filter out false positive alerts or alerts you're not interested in. For more information, see "[AUTOTITLE](/code-security/dependabot/dependabot-auto-triage-rules/about-dependabot-auto-triage-rules)."{% endif %}
 
 1. Click the "Command Injection in lodash" alert on the `javascript/package-lock.json` file. The details page for the alert will show the following information (note that some information may not apply to all alerts):
    - Whether {% data variables.product.prodname_dependabot %} created a pull request that will fix the vulnerability. You can review the suggested security update by clicking **Review security update**.

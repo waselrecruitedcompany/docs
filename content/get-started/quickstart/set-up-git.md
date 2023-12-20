@@ -32,8 +32,8 @@ If you want to work with Git locally, but do not want to use the command line, y
 
 If you do not need to work with files locally, {% data variables.product.product_name %} lets you complete many Git-related actions directly in the browser, including:
 
-- [Creating a repository](/get-started/quickstart/create-a-repo)
-- [Forking a repository](/get-started/quickstart/fork-a-repo)
+- [AUTOTITLE](/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+- [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
 - [Managing files](/repositories/working-with-files/managing-files)
 - [Being social](/get-started/quickstart/be-social)
 
@@ -43,7 +43,9 @@ If you do not need to work with files locally, {% data variables.product.product
 
    {% note %}
 
-   **Note**: If you are using a Chrome OS device, additional setup is required:
+   **Note**: Most Chrome OS devices from 2020 onwards now have a built-in Linux environment, which includes Git. To enable it, go to the Launcher, search for Linux, and click **Turn on**.
+
+   If you are using an older Chrome OS device, another method is required:
 
    1. Install a terminal emulator such as Termux from the Google Play Store on your Chrome OS device.
    1. From the terminal emulator that you installed, install Git. For example, in Termux, enter `apt install git` and then type `y` when prompted.

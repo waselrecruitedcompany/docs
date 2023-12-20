@@ -52,7 +52,7 @@ jobs:
         run: node src/links/scripts/rendered-content-link-checker.js
 
       - name: Upload artifact(s)
-        uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
+        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392
         with:
           name: artifacts
           path: ./artifacts
@@ -61,8 +61,3 @@ jobs:
         if: ${{ steps.changed_links.outputs.has_flaws_at_level == 'true' || steps.all_links.outputs.has_flaws_at_level == 'true' }}
         run: |
           exit 1
-
-      - uses: ./.github/actions/slack-alert
-        with:
-          slack_channel_id: ${{ secrets.DOCS_ALERTS_SLACK_CHANNEL_ID }}
-          slack_token: ${{ secrets.SLACK_DOCS_BOT_TOKEN }}
